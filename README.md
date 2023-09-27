@@ -1,4 +1,5 @@
 # Disaster Response Pipeline Project
+![image](https://github.com/quangnnb/udacity_data_scientist_project_2/assets/21145236/f2724392-fe5c-4d53-bb0d-67b2a1ca93e8)
 
 ### Instructions:
 1. Run the following commands in the project's root directory to set up your database and model.
