@@ -48,7 +48,9 @@ def clean_data(df):
         categories[column] = categories[column].astype(str).str[-1]
         # convert column from string to numeric
         categories[column] = categories[column].astype(int)
-    
+
+    #categories=categories[categories['related'] < 2]
+    categories['related'] = categories['related'].replace(to_replace=2, value=1)
     # Drop the original 'categories' column from the input DataFrame
     df.drop('categories', axis=1, inplace=True)
     
@@ -72,7 +74,7 @@ def save_data(df, database_filename):
         None
     """
     engine = create_engine(f'sqlite:///{database_filename}')
-    df.to_sql('disaster_messages', engine, index=False)  
+    df.to_sql('disaster_messages', engine, if_exists='replace', index=False)  
 
 
 def main():
